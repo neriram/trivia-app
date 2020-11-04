@@ -1,6 +1,6 @@
 import QuestionCard from "./components/QuestionCard";
 
-import { shuffleArray } from './randomShuffle'
+import { shuffleArray } from './randomShuffle';
 
 export type Question = {
     category: string;
@@ -25,5 +25,5 @@ export const fetchTriviaQuestions = async (amount: number, difficulty: Difficult
         {
         ...question,
         answers: shuffleArray([...question.incorrect_answers, question.correct_answer])
-    })
-};
+    }))
+}
