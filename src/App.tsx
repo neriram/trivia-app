@@ -3,8 +3,10 @@ import React, {useState} from 'react';
 import QuestionCard from './components/QuestionCard'
 //Types
 import { QuestionState, Difficulty, fetchTriviaQuestions } from './API'
+//styles
+import { GlobalStyle } from './App.styles'
 
-type AnswerObject = {
+export type AnswerObject = {
   question: string;
   answer: string;
   correct: boolean;
@@ -59,9 +61,18 @@ const App = () => {
   }
 
   const nextQuestion = () => {
-
+    //move onto next question if not last question
+    const nextQuestion = number + 1;
+    if(nextQuestion === TOTAL_QUESTIONS) {
+      setGameOver(true)
+    } else {
+      setNumber(nextQuestion)
+    }
   }
+
   return (
+    <>
+    <GlobalStyle />
     <div className="App">
     <h1>Bar Trivia</h1>
     {gameOver || userAnswers.length == TOTAL_QUESTIONS ? (
@@ -69,7 +80,7 @@ const App = () => {
       Start
     </button>
     ) : null }
-    {!gameOver ? <p className="score">Score:</p> : null }
+    {!gameOver ? <p className="score">Score:{score}</p> : null }
     {loading && <p>Loading Questions...</p> }
     {!loading && !gameOver &&  (
     <QuestionCard
@@ -85,7 +96,7 @@ const App = () => {
     <button className="next" onClick={nextQuestion}>Next Question</button>
      ) : null }
 </div>
-  );
+</>
 }
 
 export default App;
