@@ -1,6 +1,8 @@
 import React, {useState} from 'react';
 //Components
 import QuestionCard from './components/QuestionCard'
+//Types
+import { Difficulty, fetchTriviaQuestions } './API'
 
 const TOTAL_QUESTIONS = 10;
 const App = () => {
@@ -10,7 +12,9 @@ const App = () => {
   const [number, setNumber] = useState(0);
   const [userAnswers, setUserAnswers] = useState([]);
   const [score, setScore] = useState(0);
-  const [gameOver, setGameOver] = useState(true)
+  const [gameOver, setGameOver] = useState(true);
+
+  console.log(fetchTriviaQuestions(TOTAL_QUESTIONS, Difficulty.EASY))
 
 
 
