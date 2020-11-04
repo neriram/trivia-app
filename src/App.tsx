@@ -74,13 +74,13 @@ const App = () => {
     <>
       <GlobalStyle />
       <Wrapper>
-        <h1>Bar Trivia</h1>
+        <h1>Trivia Time</h1>
         {gameOver || userAnswers.length == TOTAL_QUESTIONS ? (
           <button className="start" onClick={startTrivia}>
             Start
           </button>
         ) : null}
-        {!gameOver ? <p className="score">Score:{score}</p> : null}
+        {!gameOver ? <p className="score">Score: {score}</p> : null}
         {loading && <p>Loading Questions...</p>}
         {!loading && !gameOver && (
           <QuestionCard
@@ -97,6 +97,7 @@ const App = () => {
         ) : null}
       </Wrapper>
     </>
-};
+  )
+}
 
 export default App;

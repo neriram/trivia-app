@@ -1,6 +1,6 @@
 import styled, {createGlobalStyle} from 'styled-components';
 //@ts-ignore
-import BGImage from './images/nikola-jovanovick.jpg'
+import BGImage from './images/sean-benesh.jpg'
 
 export const GlobalStyle = createGlobalStyle `
 html {
@@ -26,15 +26,15 @@ flex-direction: column;
 align-items: center;
 
 > p {
-    color: #fff;
+    color: #000;
 }
 .score {
-    color: #fff;
+    color: #abb0ab;
     font-size: 2rem;
     margin: 0;
 }
 h1 {
-    font-family: Fascinate Inline;
+    font-family: 'Beba Neue';
     background-image: linear-gradient(180deg, #fff, #87f1ff);
     font-weight: 400;
     background-size: 100%;
